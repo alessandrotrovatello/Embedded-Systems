@@ -11,7 +11,7 @@ The buggy used is a [Mikroe Buggy](https://www.mikroe.com/buggy).
 All the code was developed in [MPLAB X IDE v6.20](http://www.microchip.com/mplab/mplab-x-ide) using [XC16 Compiler](http://www.microchip.com/mplab/compilers). The bootloader used is [mikroBootloader USB HID](https://www.mikroe.com/mikrobootloader) while for serial communication [HTERM](https://www.der-hammer.info/pages/terminal.html).
 
 
-## Assignment
+## [Assignment](https://github.com/alessandrotrovatello/Embedded-Systems/tree/main/Assignment.X)
 1) Simulate an algorithm that needs 7 ms for its execution, and
 needs to work at 100 Hz. This is to emulate a real world scenario.
 2) Acquire the three magnetometer axes at 25 Hz (set the data rate
@@ -25,7 +25,7 @@ atan2(y avg,x avg).
 6) Send the computed angle at 5 Hz using the message `$YAW,x*`,
 where x is the angle in degrees.
 
-## Final Project: Autonomous Buggy Control System
+## [Final Project: Autonomous Buggy Control System](https://github.com/alessandrotrovatello/Embedded-Systems/tree/main/Project.X)
 This project implements a **basic control system** for an **autonomous ground vehicle (buggy)**. The firmware is responsible for processing movement commands, controlling motors, handling obstacle detection, and monitoring the battery.
 
 ## Firmware Requirements

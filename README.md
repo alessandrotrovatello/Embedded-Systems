@@ -17,12 +17,12 @@ needs to work at 100 Hz. This is to emulate a real world scenario.
 2) Acquire the three magnetometer axes at 25 Hz (set the data rate
 to 0b110 in the 0x4C register).
 3) Do the average of the last 5 measurements.
-4) Send it to the UART at 5 Hz using the protocol $MAG,x,y,z*,
+4) Send it to the UART at 5 Hz using the protocol `$MAG,x,y,z*`,
 where x is the average value on the x-axis, y is the average value
 of the y-axis, and z is the average z-axis value.
 5) Compute the angle to the magnetic North using
 atan2(y avg,x avg).
-6) Send the computed angle at 5 Hz using the message $YAW,x*,
+6) Send the computed angle at 5 Hz using the message `$YAW,x*`,
 where x is the angle in degrees.
 
 ## Project Overview: Autonomous Buggy Control System
@@ -43,9 +43,8 @@ This project implements a **basic control system** for an **autonomous ground ve
 
 ### Command Processing
 Commands follow the format:
-```
-$PCCMD,x,t*
-```  
+`$PCCMD,x,t*`
+  
   Where:
 - `x` = Motion type  
   - 1 → Forward motion  
@@ -56,9 +55,8 @@ $PCCMD,x,t*
 
 The system stores commands in a **FIFO queue** (max **10** commands).
 If the queue is **full**, it sends an error message:
-```
-$MACK,0*
-```
+`$MACK,0*`
+
 If no commands are available, the buggy remains in the **"Execute"** state but stops moving.
 
 ### Motor Control
@@ -84,14 +82,10 @@ Pin assignments:
 ### UART Communication
 - **Command Interface & Data Logging** via **UART → RS232**.
 - The microcontroller sends the following data:
-- **Battery voltage** (1 Hz):  
-  ```
-  $MBATT,v_batt*
-  ```
-- **Distance sensor reading** (10 Hz):  
-  ```
-  $MDIST,distance*
-  ```
+- **Battery voltage** (1 Hz): `$MBATT,v_batt*`
+  
+- **Distance sensor reading** (10 Hz): `$MDIST,distance*`
+  
 - Uses **RD0 (TX)** and **RD11 (RX)**.
 
 ## Evaluation Criteria
@@ -102,18 +96,18 @@ Pin assignments:
 
 ## Pin Mapping
 
-| Function                 | Pin |
-|--------------------------|----|
-| Left-side lights        | RB8 |
-| Right-side lights       | RF1 |
-| Brakes                 | RF0 |
-| Low-intensity lights   | RG1 |
-| Beam headlights        | RA7 |
+| Function               | Pin  |
+|------------------------|------|
+| Left-side lights       | RB8  |
+| Right-side lights      | RF1  |
+| Brakes                 | RF0  |
+| Low-intensity lights   | RG1  |
+| Beam headlights        | RA7  |
 | Battery sensing        | AN11 |
-| Left PWM (backward)    | RD1 |
-| Left PWM (forward)     | RD2 |
-| Right PWM (backward)   | RD3 |
-| Right PWM (forward)    | RD4 |
+| Left PWM (backward)    | RD1  |
+| Left PWM (forward)     | RD2  |
+| Right PWM (backward)   | RD3  |
+| Right PWM (forward)    | RD4  |
 | IR sensor voltage      | AN14/AN15 |
 | IR sensor enable       | RB9/RA3 |
 | UART TX                | RD0 |

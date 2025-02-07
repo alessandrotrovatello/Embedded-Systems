@@ -25,7 +25,7 @@ atan2(y avg,x avg).
 6) Send the computed angle at 5 Hz using the message `$YAW,x*`,
 where x is the angle in degrees.
 
-## Project Overview: Autonomous Buggy Control System
+## Final Project: Autonomous Buggy Control System
 This project implements a **basic control system** for an **autonomous ground vehicle (buggy)**. The firmware is responsible for processing movement commands, controlling motors, handling obstacle detection, and monitoring the battery.
 
 ## Firmware Requirements
@@ -47,10 +47,10 @@ Commands follow the format:
   
   Where:
 - `x` = Motion type  
-  - 1 → Forward motion  
-  - 2 → Counterclockwise rotation  
-  - 3 → Clockwise rotation  
-  - 4 → Backward motion  
+   - 1 → Forward motion  
+   - 2 → Counterclockwise rotation  
+   - 3 → Clockwise rotation  
+   - 4 → Backward motion  
 - `t` = Duration (milliseconds)
 
 The system stores commands in a **FIFO queue** (max **10** commands).
@@ -88,12 +88,6 @@ Pin assignments:
   
 - Uses **RD0 (TX)** and **RD11 (RX)**.
 
-## Evaluation Criteria
-- Adherence to specifications.
-- Correct **interrupt handling**.
-- Proper **data sharing** and **buffer management**.
-- Clean and efficient **code structure**.
-
 ## Pin Mapping
 
 | Function               | Pin  |
@@ -112,14 +106,4 @@ Pin assignments:
 | IR sensor enable       | RB9/RA3 |
 | UART TX                | RD0 |
 | UART RX                | RD11 |
-
----
-
-## Summary
-This project implements an **embedded control system** for an **autonomous buggy**, processing real-time movement commands, monitoring the battery, and preventing collisions using **PWM signals, UART communication, and IR sensors**.
-
-
-  
-
-
 

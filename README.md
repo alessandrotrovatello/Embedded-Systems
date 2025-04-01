@@ -1,5 +1,5 @@
 # Embedded System
-Embedded System projects of Robotics Engineering at University of Genoa.
+Embedded Systems projects of Robotics Engineering at the University of Genoa.
 
 <p align="center">
   <img src="https://github.com/alessandrotrovatello/Embedded-Systems/blob/main/Images/mikroe-buggy.jpg" alt="Buggy" width="300">
